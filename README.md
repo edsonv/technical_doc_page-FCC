@@ -7,7 +7,7 @@
 - **User Story #3:** The first element within each `.main-section` should be a `header` element which contains text that describes the topic of that section.
 - **User Story #4:** Each `section` element with the class of `main-section` should also have an id that corresponds with the text of each `header` contained within it. Any spaces should be replaced with underscores (e.g. The `section` that contains the header "Javascript and Java" should have a corresponding `id="Javascript_and_Java"`).
 - **User Story #5:** The `.main-section` elements should contain at least 10 `p` elements total (not each).
-- **User Story #6:** The **.main-section** elements should contain at least 5 `code` elements total (not each).
+- **User Story #6:** The `.main-section` elements should contain at least 5 `code` elements total (not each).
 - **User Story #7:** The `.main-section` elements should contain at least 5 `li` items total (not each).
 - **User Story #8:** I can see a `nav` element with a corresponding `id="navbar"`.
 - **User Story #9:** The navbar element should contain one `header` element which contains text that describes the topic of the technical documentation.
