@@ -1,21 +1,27 @@
 html,
 body {
+  box-sizing: border-box;
   color: #344654;
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
   font-family: 'Lato', system-ui;
   font-size: 1.4vw;
   margin: 0;
+  text-align: justify;
   padding: 0;
 }
 
 #navbar {
   background: #DAE5ED;
-  padding: 1em 0;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 30vw;
   & h1 {
     border-bottom: 1px solid black;
     margin: 0;
-    padding: 0;
+    padding: 1em;
   }
   & ul {
     list-style: none;
@@ -23,7 +29,12 @@ body {
     margin: 0;
     & li {
       border-bottom: 1px solid black;
-      /* padding: .5em 1em .5em 2em; */
+      padding: .5em 1em .5em 2em;
+      &:hover {
+        & a {
+          font-weight: 300;
+        }
+      }
       & a {
         color: #344654;
         font-weight: 400;
@@ -34,9 +45,17 @@ body {
 }
 
 #main-doc {
+  box-sizing: border-box;
   font-weight: 300;
-  & section {
-    margin-bottom: 4em;
+  left: 30vw;
+  position: absolute;
+  top: 0;
+  width: min-content;
+  & .main-section {
+    margin: 0 2em;
+    & p {
+      text-wrap: nowrap;
+    }
     & .formula-block {
       display: block;
       overflow-x: scroll;
@@ -51,27 +70,30 @@ body {
   }
 }
 
-h2 {
-  /* font-size: 1.5em; */
-  margin-top: 1em;
-}
-
 b {
   color: #234D6E;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (width < 768px) {
   body {
     flex-direction: column;
+    font-size: 3vw;
   }
   #navbar {
+    /* box-sizing: border-box; */
+    height: auto;
+    padding-bottom: 1em;
+    position: relative;
     width: 100vw;
   }
-  #main-doc {}
-}
-
-@media screen and (min-width: 768px) {
-  body {
-    flex-direction: row;
+  #main-doc {
+    /* box-sizing: border-box; */
+    left: auto;
+    position: relative;
+    width: 100vw;
+    & .main-section {
+      border-bottom: .1px solid #344654;
+      width: 100vw;
+    }
   }
 }
