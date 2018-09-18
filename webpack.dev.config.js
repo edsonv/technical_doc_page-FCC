@@ -28,10 +28,16 @@ module.exports = {
       },
       {
         test: /.css$/,
-        use: [
-          //'style-loader',
-          MiniCSSExtractPlugin.loader,
-          'css-loader',
+        exclude: '/node_modules/',
+        use: [{
+            loader: 'style-loader',
+          },
+          {
+            loader: MiniCSSExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -59,7 +65,8 @@ module.exports = {
       test: /^(?!.*(hot)).*/,
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      filename: './index.html'
     }),
     new MiniCSSExtractPlugin({
       filename: 'css/[name].css',
